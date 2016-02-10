@@ -1,0 +1,22 @@
+{
+    "item": {
+        "title": "title1 [BM]",
+        "name": "name1 [BM]",
+        "parts": [
+            {
+                "description": "good[BM] part [BM]",
+                "bookmarks": ["4", "5", "6", "7", "8", "9"],
+                "part1": {
+                    "innerA": "Inner[BM] bookmark",
+                    "innerB": "Inner[BM] bookmark"
+                },
+                "part2": {
+                    "innerA": "Inner[BM] bookmark",
+                    "innerB": "Inner[BM] bookmark"
+                },
+                "instruction": "good part [BM]"
+            }
+        ],
+        "bookmarks": ["1", "2", "3"]
+    }
+}

@@ -26,7 +26,9 @@ def canDrink(age: Int) = age > 100
 p.canMarry(canDrink)
 
 p.canMarry(new USS)
-p.canMarry(iranS)
+
+p canMarry iranS
+
 p.canMarry { age: Int =>
   age > 100
 }

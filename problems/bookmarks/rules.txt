@@ -1,0 +1,6 @@
+- Traverse the Json recursively and inline the bookmarks using following rules
+- Look for "bookmarks" field in a JsObject and use its values to inline
+- If there is no "bookmarks" field in a JsObject, use the values of "bookmarks" node from the parent JsObject
+- Replace [BM] from text fields with [BM|bookmark1] where bookmark1 is the next available value to inline
+- If there is no bookmark value available while replacing, remove [BM] from the text fields
+- While replacing, start with scalar json fields, then go to array fields, then go to JsObject fields
