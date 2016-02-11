@@ -1,6 +1,6 @@
 import play.api.libs.json._
 
-val json = Json.obj(
+val json: JsObject = Json.obj(
   "a" -> 10,
   "b" -> true,
   "d" -> "urn:world",

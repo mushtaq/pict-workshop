@@ -1,6 +1,5 @@
 
 import top._
-
 val bookingService = BookingService(
   Hotel("Lakewood", 3, Map(
     Category(Regular, Weekday) -> 110,
@@ -22,10 +21,10 @@ val bookingService = BookingService(
   ))
 )
 
-val bookingRequests = Seq(
-  BookingRequest(Regular, Seq(Weekday, Weekday, Weekday)),
-  BookingRequest(Regular, Seq(Weekday, Weekend, Weekend)),
-  BookingRequest(Rewards, Seq(Weekday, Weekday, Weekend))
+val bookingRequests = List(
+  BookingRequest(Regular, List(Weekday, Weekday, Weekday)),
+  BookingRequest(Regular, List(Weekday, Weekend, Weekend)),
+  BookingRequest(Rewards, List(Weekday, Weekday, Weekend))
 )
 
 bookingRequests.map(bookingService.findBestHotel)
