@@ -1,11 +1,23 @@
 package data
 
+import top.Ord
+
 case class Book(
   author: String,
   title: String,
   basePrice: Double,
   isImported: Boolean
   )
+
+object Book {
+  implicit val bookOrd: Ord[Book] = new Ord[Book] {
+    def lt(a: Book, b: Book): Boolean = a.basePrice < b.basePrice
+  }
+
+  implicit val bookOrdering: Ordering[Book] = new Ordering[Book] {
+    def compare(x: Book, y: Book): Int = (x.basePrice - y.basePrice).toInt
+  }
+}
 
 object Data {
 
