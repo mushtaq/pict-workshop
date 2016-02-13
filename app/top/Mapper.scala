@@ -19,6 +19,22 @@ object Mapper extends App {
 
   }
 
+  def flatMap[A, B](future: Future[A])(f: A => Future[B]): Future[B] = {
+
+    val promise = Promise[B]()
+
+    future.onComplete {
+      case Success(x)  => f(x).onComplete {
+        case Success(y) => promise.success(y)
+        case Failure(ex) =>
+      }
+      case Failure(ex) => promise.failure(ex)
+    }
+
+    promise.future
+
+  }
+
   map(Future(9/0))(x => x * x ).onComplete(println)
 
   Thread.sleep(1000)
